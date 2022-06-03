@@ -4,15 +4,15 @@ public class Calculator {
     
     private float result = 0.0f;
     
-    public void add(int value) {
+    public void add(float value) {
         result += value;
     }
 
-    public void remove(int value) {
+    public void minus(float value) {
         result -= value;
     }
 
-    public void divide(int value) {
+    public void divide(float value) {
         result /= value;
     }
     
@@ -21,6 +21,10 @@ public class Calculator {
     }
     
     public boolean isZeroResult() {
-        return result == 0;
+        return result == 0.0;
+    }
+    
+    public void reset() {
+        result = 0;
     }
 }
