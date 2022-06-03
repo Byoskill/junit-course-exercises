@@ -41,4 +41,8 @@ public class Student implements StudentDetails {
         sb.append('}');
         return sb.toString();
     }
+
+    public boolean hasMark() {
+        return this.mark == null;
+    }
 }

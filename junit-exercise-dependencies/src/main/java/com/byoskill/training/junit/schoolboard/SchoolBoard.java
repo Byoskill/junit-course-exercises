@@ -15,6 +15,18 @@ public class SchoolBoard {
         classroom = new Classroom();
         classroom.setAuthenticationService(authenticationService);
     }
+    /**
+     * Returns true if all students have a mark.
+     * @param userToken the user token.
+     * @return true in the case all the students have a mark.
+     * @throws IllegalAccessException
+     */
+    public boolean hasAllStudentsAMark(UserToken userToken) throws IllegalAccessException {
+        this.authenticationService.controlAccess(userToken);
+        return this.classroom.allStudents(userToken)
+                             .stream()
+                             .allMatch(Student::hasMark);
+    }
 
     /**
      * Computes the average mark for the class.
@@ -25,6 +37,7 @@ public class SchoolBoard {
         this.authenticationService.controlAccess(userToken);
         final List<Student> students = this.classroom.allStudents(userToken);
         return students.stream()
+                       .filter(Student::hasMark)
                        .mapToDouble(Student::getMark)
                        .average();
     }
