@@ -7,11 +7,8 @@
     <groupId>com.byoskill</groupId>
     <artifactId>junit-exercise-hamcrest</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
-
+    
     <build>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -19,8 +16,6 @@
                 <version>3.8.1</version>
                 <configuration>
                     <release>11</release>
-                    <source>16</source>
-                    <target>16</target>
                 </configuration>
             </plugin>
 
@@ -58,5 +53,7 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
         <hamcrest.version>2.2</hamcrest.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 </project>
