@@ -13,8 +13,6 @@ public class AnimeVORowMapper implements RowMapper<AnimeVO> {
 
     @Override public AnimeVO mapRow(ResultSet rs, int rowNum) throws SQLException {
         final AnimeVO animeVO = new AnimeVO();
-        //FIXME
-        animeVO.setId(rs.getInt("ANIME_ID"));
         animeVO.setTitle(rs.getString("TITLE"));
         animeVO.setDescription(rs.getString("DESCRIPTION"));
         animeVO.setAverageScore(rs.getInt("AVERAGE_SCORE"));

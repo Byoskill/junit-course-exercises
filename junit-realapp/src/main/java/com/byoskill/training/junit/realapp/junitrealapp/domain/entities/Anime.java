@@ -50,7 +50,7 @@ public class Anime {
 
     @Column(name = "COVER_IMAGE", length = 4000)
     private String coverImage;
-    
+
     @Column(name = "LARGE_IMAGE", length = 4000)
     private String largeImage;
 
@@ -70,8 +70,6 @@ public class Anime {
         anime.coverImage = mvo.getCoverImage();
         anime.largeImage = mvo.getLargeImage();
         anime.countryOfOrigin = mvo.getCountryOfOrigin();
-        //FIXME
-        anime.description = mvo.getDescription();
 
         return anime;
     }
@@ -86,16 +84,18 @@ public class Anime {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Anime anime = (Anime) o;
-        return Objects.equals(title, anime.title) && Objects.equals(genres,
-                                                                    anime.genres) && Objects.equals(
-                aniWebId, anime.aniWebId) && Objects.equals(popularity,
-                                                            anime.popularity) && Objects.equals(type,
-                                                                                                anime.type) && Objects.equals(
-                averageScore, anime.averageScore) && Objects.equals(endDate,
-                                                                    anime.endDate) && Objects.equals(
-                description, anime.description) && Objects.equals(countryOfOrigin,
-                                                                  anime.countryOfOrigin) && Objects.equals(
-                coverImage, anime.coverImage);
+        return Objects.equals(title, anime.title)
+                && Objects.equals(genres, anime.genres)
+                && Objects.equals(aniWebId, anime.aniWebId)
+                && Objects.equals(popularity, anime.popularity)
+                && Objects.equals(type, anime.type)
+                && Objects.equals(averageScore, anime.averageScore)
+                && Objects.equals(endDate,
+                                  anime.endDate)
+                && Objects.equals(description, anime.description)
+                && Objects.equals(countryOfOrigin,
+                                  anime.countryOfOrigin)
+                && Objects.equals(coverImage, anime.coverImage);
     }
 
     @Override public String toString() {

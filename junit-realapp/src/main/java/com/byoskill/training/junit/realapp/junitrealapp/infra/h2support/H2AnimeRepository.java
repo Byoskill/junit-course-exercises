@@ -49,9 +49,10 @@ public class H2AnimeRepository implements AnimeRepository {
         for (AnimeVO vo : animes) {
             // Fetch genres
             final String sql2 = "SELECT g.* FROM tab_anime_genre tag LEFT JOIN tab_genre g ON tag.label = g.GENRE_ID WHERE id = ?";
-            final PreparedStatementCreatorFactory pstmtFactory = new PreparedStatementCreatorFactory(sql2, Types.INTEGER);
+            final PreparedStatementCreatorFactory pstmtFactory = new PreparedStatementCreatorFactory(sql2,
+                                                                                                     Types.INTEGER);
             final PreparedStatementCreator psc = pstmtFactory.newPreparedStatementCreator(
-                    new Object[]{vo.getId()});
+                    new Object[]{12});
             jdbcTemplate.query(psc, new GenreMapper(vo));
         }
         return animes;
