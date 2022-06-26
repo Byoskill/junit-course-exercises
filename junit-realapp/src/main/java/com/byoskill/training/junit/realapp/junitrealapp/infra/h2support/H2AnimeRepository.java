@@ -62,7 +62,7 @@ public class H2AnimeRepository implements AnimeRepository {
         return animeJPA.findById(id);
     }
 
-    @Override public List<AnimeVO> findAll() {
+    @Override public Iterable<Anime> findAll() {
         return this.animeJPA.findAll();
     }
 

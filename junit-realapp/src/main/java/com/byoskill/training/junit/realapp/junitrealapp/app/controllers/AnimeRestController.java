@@ -20,7 +20,14 @@ public class AnimeRestController {
 
     @GetMapping
     public List<AnimeVO> getAll() {
-        return new ArrayList<>(animeRepository.findAll());
+        final Iterable<Anime> all = animeRepository.findAll();
+        final ArrayList<AnimeVO> animeVOS = new ArrayList<>();
+        for (Anime anime : all) {
+            if (!anime.getTitle().isEmpty()) {
+                animeVOS.add(anime.toValueObject());
+            }
+        }
+        return animeVOS;
     }
     @GetMapping("/top10")
     public List<AnimeVO> top10() {
