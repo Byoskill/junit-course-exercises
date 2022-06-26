@@ -62,4 +62,8 @@ public class H2AnimeRepository implements AnimeRepository {
         return animeJPA.findById(id);
     }
 
+    @Override public List<AnimeVO> findAll() {
+        return this.animeJPA.findAll();
+    }
+
 }
