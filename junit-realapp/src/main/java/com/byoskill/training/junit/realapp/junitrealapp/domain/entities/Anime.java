@@ -140,7 +140,7 @@ public class Anime {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.description = title;
     }
 
     public List<Genre> getGenres() {
